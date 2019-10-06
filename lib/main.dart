@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_ui_checkout/screens/checkout_screen.dart';
+import 'package:flutter_ui_checkout/screens/cart_screen.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Nunito',
       ),
       routes: {
-        '/': (context) => CheckoutScreen(),
+        '/': (context) => CartScreen(),
       },
       initialRoute: '/',
     );
