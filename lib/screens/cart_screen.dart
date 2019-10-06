@@ -53,12 +53,11 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(8),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8.0,
+                padding: const EdgeInsets.only(
+                  left: 16,
+                  right: 16,
+                  top: 20.0,
+                  bottom: 8,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,6 +102,7 @@ class _CartScreenState extends State<CartScreen> {
                             order.name,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
+                              fontSize: 14,
                             ),
                           ),
                           Text(
@@ -112,6 +112,7 @@ class _CartScreenState extends State<CartScreen> {
                         ],
                       ),
                       subtitle: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Column(
@@ -195,15 +196,68 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8.0,
+                padding: const EdgeInsets.only(
+                  left: 16,
+                  right: 16,
+                  top: 20.0,
+                  bottom: 8,
                 ),
                 child: Text(
                   'Maybe you would like these?',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
+                ),
+              ),
+              Container(
+                height: 80,
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: ListView(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: cartData.recommendedOrders.map((order) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          vertical: 12,
+                          horizontal: 16,
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                              width: 80,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    order.name,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 11,
+                                    ),
+                                  ),
+                                  Text(
+                                    "\$${order.price.toStringAsFixed(2)}",
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Image.network(order.imageUrl)
+                          ],
+                        ),
+                      ),
+                    );
+                  }).toList(),
                 ),
               )
             ],
@@ -219,7 +273,7 @@ class _CartScreenState extends State<CartScreen> {
             horizontal: 24,
           ),
           child: FlatButton(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(14),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
             ),

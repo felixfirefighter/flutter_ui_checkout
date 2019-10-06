@@ -1,6 +1,7 @@
 import 'package:flutter_ui_checkout/models/order.dart';
 import 'package:flutter_ui_checkout/models/order_add_on.dart';
 import 'package:flutter_ui_checkout/models/payment_method.dart';
+import 'package:flutter_ui_checkout/models/recommended_order.dart';
 
 class Cart {
   String restaurant;
@@ -8,6 +9,7 @@ class Cart {
   DateTime deliveryTime;
   PaymentMethod paymentMethod;
   List<Order> orders;
+  List<RecommendedOrder> recommendedOrders;
   double deliveryFee;
 
   Cart({
@@ -16,6 +18,7 @@ class Cart {
     this.deliveryTime,
     this.paymentMethod,
     this.orders,
+    this.recommendedOrders = const [],
     this.deliveryFee,
   });
 
