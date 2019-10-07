@@ -1,6 +1,8 @@
 import 'dart:ui' as prefix0;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_checkout/components/app_bar_title.dart';
+import 'package:flutter_ui_checkout/components/base_bottom_app_bar.dart';
 import 'package:flutter_ui_checkout/data/data.dart';
 
 class CartScreen extends StatefulWidget {
@@ -13,17 +15,9 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Your Cart',
-          style: TextStyle(
-            color: Colors.black87,
-            fontWeight: FontWeight.w800,
-          ),
-        ),
+        title: AppBarTitle(text: 'Your Cart'),
         centerTitle: true,
-        backgroundColor: Colors.white,
       ),
-      backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -264,30 +258,11 @@ class _CartScreenState extends State<CartScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.grey[100],
-        elevation: 0,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 16.0,
-            horizontal: 24,
-          ),
-          child: FlatButton(
-            padding: EdgeInsets.all(14),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
-            ),
-            color: Colors.green[700],
-            child: Text(
-              'Checkout'.toUpperCase(),
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            onPressed: () {},
-          ),
-        ),
+      bottomNavigationBar: BaseBottomAppBar(
+        text: 'Checkout',
+        onPressed: () {
+          Navigator.of(context).pushNamed('/checkout');
+        },
       ),
     );
   }
