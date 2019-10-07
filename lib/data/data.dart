@@ -12,18 +12,19 @@ final Cart cartData = new Cart(
     paymentMethod: PaymentMethod.applePay,
     orders: [
       Order(
-          id: 'o_1',
-          imageUrl:
-              'https://i.dlpng.com/static/png/1795299-how-can-we-help-you-today-healthy-food-png-792_797_preview.png',
-          name: 'Salmon',
-          price: 24,
-          quantity: 1,
-          orderAddOns: [
-            OrderAddOn(
-              name: 'Extra salad',
-              price: 1,
-            )
-          ]),
+        id: 'o_1',
+        imageUrl:
+            'https://i.dlpng.com/static/png/1795299-how-can-we-help-you-today-healthy-food-png-792_797_preview.png',
+        name: 'Salmon',
+        price: 24,
+        quantity: 1,
+        orderAddOns: [
+          OrderAddOn(
+            name: 'Extra salad',
+            price: 1,
+          )
+        ],
+      ),
       Order(
         id: 'o_2',
         imageUrl:
