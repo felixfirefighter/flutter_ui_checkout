@@ -17,7 +17,7 @@ final Cart cartData = new Cart(
             'https://i.dlpng.com/static/png/1795299-how-can-we-help-you-today-healthy-food-png-792_797_preview.png',
         name: 'Salmon',
         price: 24,
-        quantity: 1,
+        quantity: 3,
         orderAddOns: [
           OrderAddOn(
             name: 'Extra salad',

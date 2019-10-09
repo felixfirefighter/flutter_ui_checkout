@@ -33,4 +33,8 @@ class Cart {
       return allOrderSum + (order.price + addOnSum) * order.quantity;
     });
   }
+
+  double get totalWithDeliveryFee {
+    return total + deliveryFee;
+  }
 }
